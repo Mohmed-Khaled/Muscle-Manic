@@ -1,0 +1,9 @@
+f0=4;
+Fs=100;
+Ts=1/Fs;
+t=0:Ts:1-Ts;
+y=sin(2*pi*f0*t);
+%plot(t,y)
+spectrum=fftshift(fft(y));
+f=linspace(-Fs/2,Fs/2,length(y));
+stem(f,abs(spectrum))
