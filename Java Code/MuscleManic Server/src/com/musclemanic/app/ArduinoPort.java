@@ -14,14 +14,15 @@ public class ArduinoPort {
 	
 	
     public static void main(String[] args) {
-        serialPort = new SerialPort("COM14");
+        serialPort = new SerialPort("COM5");
         processCommand = new ProcessCommand();
         try {
             serialPort.openPort();//Open port
-            serialPort.setParams(115200, 8, 1, 0);//Set params
+            serialPort.setParams(9600, 8, 1, 0);//Set params
             int mask = SerialPort.MASK_RXCHAR + SerialPort.MASK_CTS + SerialPort.MASK_DSR;//Prepare mask
             serialPort.setEventsMask(mask);//Set mask
             serialPort.addEventListener(new SerialPortReader());//Add SerialPortEventListener
+            System.out.println("Connected to port.");
         }
         catch (SerialPortException ex) {
             System.out.println(ex);
@@ -42,6 +43,7 @@ public class ArduinoPort {
                     //Read data, if 1 byte available 
                     try {
                         byte buffer[] = serialPort.readBytes(1);
+                        System.out.println(buffer);
                         lineRead = new String (buffer);
                         command = Integer.parseInt(lineRead);
                         processCommand.doCommand(command);
