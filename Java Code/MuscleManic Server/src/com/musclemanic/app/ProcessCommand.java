@@ -11,17 +11,17 @@ public class ProcessCommand {
 	
 	private static Robot mRobot;
     // Constant that indicate command from devices
-    private static final int EXIT_CMD = 0;
-    private static final int MOUSE_MOVE_UP = 1;
-    private static final int MOUSE_MOVE_DOWN = 2;
-    private static final int MOUSE_MOVE_RIGHT = 3;
-    private static final int MOUSE_MOVE_LEFT = 4;
-    private static final int MOUSE_LEFT_CLICK = 5;
-    private static final int MOUSE_RIGHT_CLICK = 6;  
-    private static final int KEY_RIGHT = 7;
-    private static final int KEY_LEFT = 8;
-    private static final int KEY_SPACE = 9;
-    private static final int KEY_ESC = 10;
+    private static final int EXIT_CMD = 10;
+    private static final int MOUSE_MOVE_UP = 0;
+    private static final int MOUSE_MOVE_DOWN = 1;
+    private static final int MOUSE_MOVE_RIGHT = 2;
+    private static final int MOUSE_MOVE_LEFT = 3;
+    private static final int MOUSE_LEFT_CLICK = 4;
+    private static final int MOUSE_RIGHT_CLICK = 5;  
+    private static final int KEY_RIGHT = 6;
+    private static final int KEY_LEFT = 7;
+    private static final int KEY_SPACE = 8;
+    private static final int KEY_ESC = 9;
 	
 	public ProcessCommand(){
 		try {
